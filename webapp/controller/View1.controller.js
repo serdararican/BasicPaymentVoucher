@@ -24,6 +24,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller",
 			// get the EventBus
 			var oEventBus = sap.ui.getCore().getEventBus();
 			// put the onHaberles method into the EventBus
+			debugger;
 			oEventBus.subscribe("View2", "UploadCol", this.onHaberles, this);
 			var oData = {
 				pv_begda: "",
