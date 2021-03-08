@@ -1,0 +1,67 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="HarcirahDeneme.controller.View1" id="ilkekran">
+	<App id="idAppControl">
+		<pages>
+			<Page title="Personel Masraf Giris Sayfasi">
+				<content>
+					<FlexBox width="100%" id="box0_1612949060263"/>
+					<sap.ui.layout.form:Form xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" id="form0">
+						<sap.ui.layout.form:formContainers>
+							<sap.ui.layout.form:FormContainer title="{i18n>dataEingeben}" id="container1">
+								<sap.ui.layout.form:formElements>
+									<sap.ui.layout.form:FormElement label="{i18n>begda}" id="element1">
+										<sap.ui.layout.form:fields>
+											<DatePicker xmlns="sap.m" id="ibegda" placeholder="DD.MM.YYYY" change="handleChange" class="sapUiSmallMarginBottom" width="20%"
+												valueFormat="yyyy-MM-dd"/>
+										</sap.ui.layout.form:fields>
+									</sap.ui.layout.form:FormElement>
+									<sap.ui.layout.form:FormElement label="{i18n>endda}" id="element3">
+										<sap.ui.layout.form:fields>
+											<DatePicker xmlns="sap.m" id="iendda" placeholder="DD.MM.YYYY" change="handleChange" class="sapUiSmallMarginBottom" width="20%"
+												valueFormat="yyyy-MM-dd"/>
+										</sap.ui.layout.form:fields>
+									</sap.ui.layout.form:FormElement>
+									<sap.ui.layout.form:FormElement label="{i18n>betrg}" id="element2">
+										<sap.ui.layout.form:fields>
+											<Input width="20%" id="ibetrg" description="EUR" type="Number"/>
+										</sap.ui.layout.form:fields>
+									</sap.ui.layout.form:FormElement>
+									<sap.ui.layout.form:FormElement label="{i18n>zweck}" id="element4">
+										<sap.ui.layout.form:fields>
+											<Input width="20%" id="izweck"/>
+										</sap.ui.layout.form:fields>
+									</sap.ui.layout.form:FormElement>
+									<sap.ui.layout.form:FormElement label="{i18n>anlagen}" id="element1_1614602015707">
+										<sap.ui.layout.form:fields>
+											<Text text="{passModel>/attachments}"/>
+										</sap.ui.layout.form:fields>
+									</sap.ui.layout.form:FormElement>
+								</sap.ui.layout.form:formElements>
+							</sap.ui.layout.form:FormContainer>
+						</sap.ui.layout.form:formContainers>
+						<sap.ui.layout.form:layout>
+							<sap.ui.layout.form:ResponsiveGridLayout id="layout0"/>
+						</sap.ui.layout.form:layout>
+					</sap.ui.layout.form:Form>
+					<UploadCollection id="UploadCollection" maximumFilenameLength="55" maximumFileSize="1000" multiple="true" sameFilenameAllowed="true"
+						mode="SingleSelectMaster" instantUpload="false"
+						noDataDescription="Drop files or use the &quot;Add&quot; button to keep files ready for upload" change="onChange"
+						fileDeleted="onFileDeleted" filenameLengthExceed="onFilenameLengthExceed" fileSizeExceed="onFileSizeExceed" typeMissmatch="onTypeMissmatch"
+						uploadComplete="onUploadComplete" beforeUploadStarts="onBeforeUploadStarts" uploadUrl="/sap/opu/odata/sap/ZSIFIRDAN_SRV/FileSet">
+						<!--	<items>
+							<UploadCollectionItem documentId="{Id}" fileName="{Filename}" url="/sap/opu/odata/sap/ZSIFIRDAN_SRV/FileSet(guid'{Id}')/$value"
+								mimeType="{Mimetype}" enableEdit="false" enableDelete="false" visibleDelete="false" visibleEdit="false"></UploadCollectionItem>
+						</items>-->
+					</UploadCollection>
+					<Button id="Button" text="{i18n>hinzufugen}" press="onStartUpload"/>
+					<FlexBox width="50%" id="box1" justifyContent="End">
+						<items>
+							<Button xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="{i18n>vorlegen}" id="button0"
+								width="auto" press="action" action:wiring="\{'press':\{'navigation':\{'routeName':'View2'\}\}\}"/>
+						</items>
+					</FlexBox>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
